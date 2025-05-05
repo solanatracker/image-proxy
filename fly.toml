@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for image-proxy-test on 2025-05-05T16:20:59+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'image-proxy'
+primary_region = 'ams'
+
+[build]
+
+[http_service]
+  internal_port = 8181
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+  [http_service.concurrency]
+    type = 'connections'
+    hard_limit = 1000
+    soft_limit = 1000
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
