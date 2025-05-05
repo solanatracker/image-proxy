@@ -9,7 +9,7 @@
         "hono": "^4.2.9",
         "ipaddr.js": "^2.2.0",
         "is-valid-http-url": "^1.0.3",
-      },
+      }, 
       "devDependencies": {
         "@flydotio/dockerfile": "^0.5.7",
         "@types/node": "^22.15.3",
